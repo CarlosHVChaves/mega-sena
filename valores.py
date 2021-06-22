@@ -55,8 +55,8 @@ def aposta(quantidade_dezenas):
             converter_moeda = locale.currency( valor_para_pagar, grouping=True )
             print(f"O valor total à pagar na aposta é de {converter_moeda}")
             return converter_moeda
-    else:
-        print ("Não foram encontrado valores para a quantidade de dezenas informadas")
+        else:
+            print ("Não foram encontrado valores para a quantidade de dezenas informadas")
 
 
 if __name__ == "__main__":
