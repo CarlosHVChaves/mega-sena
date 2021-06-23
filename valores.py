@@ -2,61 +2,29 @@ import locale
 
 locale.setlocale( locale.LC_ALL, '' )
 
+VALOR = {
+    6: (4.50),
+    7: (31.50),
+    8: (126.00),
+    9: (378.00),
+    10: (945.00),
+    11: (2079.00),
+    12: (4158.00),
+    13: (7722.00),
+    14: (13513.50),
+    15: (22522.50)
+}
+
+
 def aposta(quantidade_dezenas):
-    while(True):
-        if quantidade_dezenas == 6:
-            print (locale)
-            valor_para_pagar = 4.50
-            converter_moeda = locale.currency( valor_para_pagar, grouping=True )
-            print(f"O valor total à pagar na aposta é de {converter_moeda}")
-            return converter_moeda
-        if quantidade_dezenas == 7:
-            valor_para_pagar = 31.50
-            converter_moeda = locale.currency( valor_para_pagar, grouping=True )
-            print(f"O valor total à pagar na aposta é de {converter_moeda}")
-            return converter_moeda
-        if quantidade_dezenas == 8:
-            valor_para_pagar = 126.00
-            converter_moeda = locale.currency( valor_para_pagar, grouping=True )
-            print(f"O valor total à pagar na aposta é de {converter_moeda}")
-            return converter_moeda
-        if quantidade_dezenas == 9:
-            valor_para_pagar = 378.00
-            converter_moeda = locale.currency( valor_para_pagar, grouping=True )
-            print(f"O valor total à pagar na aposta é de {converter_moeda}")
-            return converter_moeda
-        if quantidade_dezenas == 10:
-            valor_para_pagar = 945.00
-            converter_moeda = locale.currency( valor_para_pagar, grouping=True )
-            print(f"O valor total à pagar na aposta é de {converter_moeda}")
-            return converter_moeda
-        if quantidade_dezenas == 11:
-            valor_para_pagar = 2079.00
-            converter_moeda = locale.currency( valor_para_pagar, grouping=True )
-            print(f"O valor total à pagar na aposta é de {converter_moeda}")
-            return converter_moeda
-        if quantidade_dezenas == 12:
-            valor_para_pagar = 4158.00
-            converter_moeda = locale.currency( valor_para_pagar, grouping=True )
-            print(f"O valor total à pagar na aposta é de {converter_moeda}")
-            return converter_moeda
-        if quantidade_dezenas == 13:
-            valor_para_pagar = 7722.00
-            converter_moeda = locale.currency( valor_para_pagar, grouping=True )
-            print(f"O valor total à pagar na aposta é de {converter_moeda}")
-            return converter_moeda
-        if quantidade_dezenas == 14:
-            valor_para_pagar = 13513.50
-            converter_moeda = locale.currency( valor_para_pagar, grouping=True )
-            print(f"O valor total à pagar na aposta é de {converter_moeda}")
-            return converter_moeda
-        if quantidade_dezenas == 15:
-            valor_para_pagar = 22522.50
-            converter_moeda = locale.currency( valor_para_pagar, grouping=True )
-            print(f"O valor total à pagar na aposta é de {converter_moeda}")
-            return converter_moeda
+    while (True):
+        if quantidade_dezenas in VALOR:
+            valor_aposta = locale.currency(VALOR.get(quantidade_dezenas), grouping=True )
+            print(f"O valor total à pagar na aposta é de {valor_aposta}")
+            return valor_aposta
         else:
             print ("Não foram encontrado valores para a quantidade de dezenas informadas")
+            break
 
 
 if __name__ == "__main__":
